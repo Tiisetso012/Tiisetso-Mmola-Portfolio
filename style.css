@@ -68,8 +68,9 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    background: url('https://via.placeholder.com/1500x800/222222/FFFFFF?text=Background+Image') no-repeat center center/cover; /* Placeholder. Replace with a relevant image */
-    color: #fff; /* This can stay, but we'll override specific text color in .hero-content */
+    /* Assuming you have a hero-background.jpg in your images folder. If not, remove this line or add one */
+    background: url('./images/hero-background.jpg') no-repeat center center/cover;
+    color: #fff;
     text-align: center;
     padding: 100px 20px;
     display: flex;
@@ -80,7 +81,8 @@ nav ul li a:hover {
 
 .hero-content {
     max-width: 800px;
-    color: #333; /* CHANGED: Made text inside hero-content black/dark grey for visibility */
+    color: #333; /* Default text color for content over hero background */
+    /* If your hero background is dark, you might want to change this to #fff */
 }
 
 .hero h1 {
@@ -93,7 +95,7 @@ nav ul li a:hover {
     margin-bottom: 30px;
 }
 
-/* MODIFIED: Specific styles for social media icons for better visibility */
+/* Specific styles for social media icons for better visibility */
 .social-links .fa-linkedin {
     color: #0077B5; /* LinkedIn blue */
     font-size: 2.5rem;
@@ -116,22 +118,49 @@ nav ul li a:hover {
     color: #666; /* Light black/dark grey on hover for "black and white" feel */
 }
 
-/* Section Styling */
+/* Section Styling - General */
 section {
     padding: 80px 20px;
     max-width: 1000px;
     margin: 0 auto;
     text-align: center;
+    position: relative; /* Needed for the ::before pseudo-element */
+    overflow: hidden; /* Ensures pseudo-element doesn't overflow */
+    background-color: #f4f4f4; /* Fallback in case image fails or no image */
+    color: #333; /* Default text color, overridden by specific sections if needed */
 }
 
+/* Remove alternating background as we're using specific images or plain background */
 section:nth-of-type(even) {
-    background-color: #e9e9e9;
+    background-color: transparent;
+}
+
+/* Overlay for text readability on section background images */
+/* This targets sections that have a background image via CSS or have the 'section-with-bg' class */
+section.section-with-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay for dark images */
+    z-index: -1; /* Place it behind the content */
+}
+
+/* Text color for sections with dark backgrounds */
+section.section-with-bg h2,
+section.section-with-bg p,
+section.section-with-bg li,
+section.section-with-bg span,
+section.section-with-bg a:not(.button):not(.cv-button) { /* Exclude buttons */
+    color: #fff; /* White text for better contrast */
 }
 
 h2 {
     font-size: 2.5rem;
     margin-bottom: 40px;
-    color: #333;
+    color: #333; /* Default H2 color */
     position: relative;
     display: inline-block;
 }
@@ -141,9 +170,71 @@ h2::after {
     display: block;
     width: 60px;
     height: 4px;
-    background-color: #007bff;
+    background-color: #007bff; /* Default H2 underline color */
     margin: 10px auto 0;
     border-radius: 2px;
+}
+
+/* Override H2 underline color for sections with dark backgrounds */
+section.section-with-bg h2::after {
+    background-color: #fff; /* White for underlines on dark backgrounds */
+}
+
+/* Specific Background Images for sections */
+/* About Section - No background image for this section */
+#about {
+    background-image: none; /* Explicitly ensure no background for About */
+    background-color: #f4f4f4; /* Keep a light background color */
+    color: #333; /* Ensure text is dark */
+}
+
+/* Ensure no overlay is applied to the about section */
+#about::before {
+    display: none;
+}
+
+
+#skills {
+    background-image: url('./images/skills.jpeg'); /* Your Skills image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* For a parallax-like scroll effect */
+}
+
+#achievements {
+    background-image: url('./images/Achievements.jpeg'); /* Your Achievements image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#activities {
+    background-image: url('./images/Activities.jpeg'); /* Your Activities image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Projects Section - No general background image for this section, images are per card */
+#projects {
+    background-image: none;
+    background-color: #f4f4f4; /* Keep a light background for the section itself */
+    color: #333;
+}
+
+#projects::before {
+    display: none; /* No general overlay for projects section */
+}
+
+#contact {
+    background-image: url('./images/Contact.jpeg'); /* Your Contact image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* About Section */
@@ -163,12 +254,13 @@ h2::after {
 }
 
 .skill-item {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white to stand out over section background */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+    color: #333; /* Keep text dark inside skill items */
 }
 
 .skill-item:hover {
@@ -178,7 +270,7 @@ h2::after {
 
 .skill-item i {
     font-size: 3rem;
-    color: #007bff;
+    color: #007bff; /* Icons can stay blue */
     margin-bottom: 10px;
 }
 
@@ -189,42 +281,75 @@ h2::after {
 }
 
 /* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Base Project Card Styling */
 .project-card {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-    text-align: left;
+    position: relative; /* Needed for internal overlay/background */
+    overflow: hidden; /* Hide overflowing background */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white fallback/base for cards */
+    color: #333; /* Keep text dark inside cards by default */
+    padding: 25px; /* Add some padding */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease;
 }
 
-.project-card h3 {
-    color: #007bff;
-    font-size: 1.8rem;
-    margin-bottom: 15px;
+.project-card:hover {
+    transform: translateY(-5px);
 }
 
-.project-card p {
-    font-size: 1.05rem;
-    margin-bottom: 20px;
+/* Overlay for project cards with background images */
+.project-card.with-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Darker overlay for card backgrounds */
+    z-index: 0; /* Behind content, but above the image itself */
 }
 
-.project-links .github-link {
-    display: inline-block;
-    background-color: #333;
+/* Text color for project cards with background images */
+.project-card.with-bg * { /* Affects all children elements inside the card */
+    color: #fff; /* White text for better contrast on dark card backgrounds */
+    position: relative; /* Bring content above the overlay */
+    z-index: 1; /* Ensure text is above the overlay */
+}
+
+/* Adjust specific colors for elements inside project cards with background images if needed */
+.project-card.with-bg h3 {
+    color: #007bff; /* Keep original color for project card titles if you want them to pop, or change to #fff */
+}
+
+.project-card.with-bg .github-link {
+    background-color: rgba(0, 123, 255, 0.8); /* Slightly transparent blue for buttons */
     color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+}
+.project-card.with-bg .github-link:hover {
+    background-color: #0056b3;
 }
 
-.project-links .github-link:hover {
-    background-color: #555;
+
+/* Specific Project Card Backgrounds */
+#caffex-coffee-project {
+    background-image: url('./images/Caffex Coffee.jpeg'); /* Your Caffex Coffee image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.project-links .github-link i {
-    margin-right: 8px;
+#packet-tracer-project {
+    background-image: url('./images/Packet Tracer P_.jpeg'); /* Your Packet Tracer image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* Contact Section */
@@ -240,13 +365,13 @@ h2::after {
 }
 
 .contact-info p i {
-    color: #007bff;
+    color: #fff; /* Ensure icons are white on dark contact background */
     margin-right: 10px;
 }
 
 .contact-info a {
-    color: #333;
-    text-decoration: none;
+    color: #fff; /* White for links on dark contact background */
+    text-decoration: underline; /* Add underline for visibility */
     transition: color 0.3s ease;
 }
 
@@ -296,8 +421,8 @@ footer {
         padding: 50px 15px;
     }
 
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    .skills-grid, .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); /* Stack on small screens */
     }
 }
 
