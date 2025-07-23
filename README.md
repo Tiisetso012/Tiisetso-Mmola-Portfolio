@@ -1,53 +1,53 @@
-# Tiisetso Mmola - Virtual CV / Personal Portfolio
+# Tiisetso Mmola - Virtual CV
 
-This repository hosts the codebase for my personal portfolio website, serving as a dynamic Virtual CV. This website showcases my skills, projects, and contact information to enhance my professional online presence.
+Welcome to my personal portfolio website, serving as my Virtual CV! This site showcases my skills, projects, achievements, and provides an overview of my professional profile.
 
-## Features
+## About Me
+I am a dedicated final-year BSc Information Technology student at North-West University, aspiring to be a proficient software and web developer. I am passionate about leveraging technology to solve real-world problems and enhance user experiences.
 
-* **About Me:** A concise introduction to my professional background and aspirations.
-* **Skills:** Overview of my technical proficiencies, including Java, C#, Python, C++, and Web Development.
-* **Projects:** Detailed descriptions of key projects, with links to their respective GitHub repositories (e.g., Caffex Coffee Shop Website).
-* **Contact Information:** Easy ways to get in touch with me.
-* **Responsive Design:** Optimized for viewing on various devices (desktops, tablets, mobile phones).
-* **Downloadable CV:** Direct link to my traditional PDF CV.
+## Skills
+- Java
+- C# (CSharp)
+- Python
+- C++
+- Web Development
 
-## Technologies Used
+## Projects
+Here are some of the key projects I've worked on:
 
-* **HTML5:** For structuring the content.
-* **CSS3:** For styling and layout, including responsive design.
-* **JavaScript:** For interactive elements like smooth scrolling.
-* **Font Awesome:** For professional icons.
+### Caffex Coffee Shop Website
+Guided a team in the development of a comprehensive website for Caffex Coffee Shop. This platform allows customers to order drinks online, receive discounts, and provides a secure login for staff interaction, streamlining operations and enhancing customer engagement.
+- [View on GitHub](https://github.com/Tiisetso012/CoffeeShop.git)
 
-## Setup and Usage
+### Packet Tracer Project
+Worked with group members on a company network expansion project. Designed a cost-effective network infrastructure for a new office building using MySQL Workbench, ensuring support for existing and new computer equipment while adhering to company requirements.
+- [View on GitHub](https://github.com/tumiiiey2323/theNetworkDr.git)
 
-To view this portfolio locally:
+## Achievements & Awards
+- Best achiever in Physical Science Grade 11 Certificate
+- Top 10 finalist Grade 11 Certificate
+- Best Achiever in Physical Science Grade 10
 
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/your-github-username/your-virtual-cv-repo-name.git](https://github.com/your-github-username/your-virtual-cv-repo-name.git)
-    ```
-    *(Replace `your-github-username` and `your-virtual-cv-repo-name` with your actual GitHub username and the name of your new repository)*
-2.  **Navigate to the directory:**
-    ```bash
-    cd your-virtual-cv-repo-name
-    ```
-3.  **Open `index.html`:** Simply open the `index.html` file in your web browser.
+## Activities
+- Enrolled at WeThinkCode Programme BootCamp
 
-## Hosting on GitHub Pages
+## Contact
+Feel free to reach out for any questions or collaboration opportunities:
+- Email: tiisetsommotla123@gmail.com
+- Phone: 0845434609
+- Address: 6921 Zone 2, Winnie Mandela, Tembisa, 1632
 
-This portfolio is designed to be easily hosted using GitHub Pages.
-
-1.  **Push the code to your GitHub repository.**
-2.  Go to your repository on GitHub.
-3.  Click on **Settings** -> **Pages**.
-4.  Under "Build and deployment", select **Branch** and choose your `main` (or `master`) branch, then select `/ (root)` for the folder.
-5.  Click **Save**.
-6.  Your site will be published at `https://your-github-username.github.io/your-virtual-cv-repo-name/` within a few minutes.
-
-## Important Notes:
-
-* **Update Links:** Remember to update the placeholder GitHub links in `index.html` with your actual repository URLs (for the Virtual CV repo itself, and for any project repos like the group project).
-* **CV PDF:** Ensure your CV PDF is named `Tiisetso_Mmola_CV.pdf` and placed in the same directory as `index.html`, or update the link in `index.html` accordingly.
-* **Hero Background Image:** Consider replacing the placeholder background image in `style.css` with a more personalized one.
+## Connect with me
+- [LinkedIn](https://www.linkedin.com/in/tiisetso-mmola-2b1223341?utm_source=share_via&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
+- [GitHub](https://github.com/Tiisetso012)
 
 ---
+
+## How to use this repository
+To view this Virtual CV locally:
+1.  Clone the repository: `git clone https://github.com/Tiisetso012/Tiisetso-Mmola-Portfolio.git`
+2.  Navigate to the directory: `cd Tiisetso-Mmola-Portfolio`
+3.  Open `index.html` in your web browser.
+
+## License
+© 2025 Tiisetso Mmola. All rights reserved.
