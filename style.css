@@ -1,22 +1,23 @@
 /* General Body Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f8f9fa;
     color: #333;
     scroll-behavior: smooth;
 }
 
 /* Header and Navigation */
 header {
-    background-color: #333;
+    background-color: #2c3e50;
     color: #fff;
     padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 nav {
@@ -31,6 +32,7 @@ nav {
 .logo {
     font-size: 1.8rem;
     font-weight: bold;
+    color: #3498db;
 }
 
 nav ul {
@@ -41,226 +43,301 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
     transition: color 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 4px;
 }
 
 nav ul li a:hover {
-    color: #007bff; /* Highlight color */
+    color: #3498db;
+    background-color: rgba(255,255,255,0.1);
 }
 
 .cv-button {
-    background-color: #007bff;
-    padding: 8px 15px;
+    background-color: #3498db;
+    padding: 8px 20px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 .cv-button:hover {
-    background-color: #0056b3;
+    background-color: #2980b9;
+    color: white;
 }
 
 /* Hero Section */
 .hero {
-    background: url('https://via.placeholder.com/1500x800/222222/FFFFFF?text=Background+Image') no-repeat center center/cover; /* Placeholder. Replace with a relevant image */
-    color: #fff; /* This can stay, but we'll override specific text color in .hero-content */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
     text-align: center;
-    padding: 100px 20px;
+    padding: 120px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 70vh;
+    min-height: 80vh;
 }
 
 .hero-content {
     max-width: 800px;
-    color: #333; /* CHANGED: Made text inside hero-content black/dark grey for visibility */
 }
 
 .hero h1 {
     font-size: 3.5rem;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .hero p {
     font-size: 1.5rem;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    opacity: 0.9;
 }
 
-/* MODIFIED: Specific styles for social media icons for better visibility */
-.social-links .fa-linkedin {
-    color: #0077B5; /* LinkedIn blue */
+.social-links a {
+    color: #fff;
     font-size: 2.5rem;
-    margin: 0 15px;
-    transition: color 0.3s ease;
+    margin: 0 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.social-links .fa-linkedin:hover {
-    color: #00568f; /* Darker blue on hover */
-}
-
-.social-links .fa-github {
-    color: #333; /* Black for GitHub */
-    font-size: 2.5rem;
-    margin: 0 15px;
-    transition: color 0.3s ease;
-}
-
-.social-links .fa-github:hover {
-    color: #666; /* Light black/dark grey on hover for "black and white" feel */
+.social-links a:hover {
+    transform: translateY(-5px);
+    color: #3498db;
 }
 
 /* Section Styling */
 section {
-    padding: 80px 20px;
-    max-width: 1000px;
+    padding: 100px 20px;
+    max-width: 1200px;
     margin: 0 auto;
-    text-align: center;
 }
 
 section:nth-of-type(even) {
-    background-color: #e9e9e9;
+    background-color: #fff;
+}
+
+section:nth-of-type(odd) {
+    background-color: #f8f9fa;
 }
 
 h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    color: #333;
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+    color: #2c3e50;
     position: relative;
     display: inline-block;
+    text-align: center;
+    width: 100%;
 }
 
 h2::after {
     content: '';
     display: block;
-    width: 60px;
+    width: 80px;
     height: 4px;
-    background-color: #007bff;
-    margin: 10px auto 0;
+    background-color: #3498db;
+    margin: 15px auto 0;
     border-radius: 2px;
 }
 
 /* About Section */
+.about {
+    text-align: center;
+}
+
 .about p {
-    font-size: 1.1rem;
-    max-width: 800px;
-    margin: 0 auto;
+    font-size: 1.2rem;
+    max-width: 900px;
+    margin: 0 auto 25px;
+    line-height: 1.8;
     text-align: left;
 }
 
 /* Skills Section */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 30px;
     margin-top: 40px;
 }
 
 .skill-item {
     background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
     text-align: center;
+    border: 2px solid transparent;
 }
 
 .skill-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    border-color: #3498db;
 }
 
 .skill-item i {
-    font-size: 3rem;
-    color: #007bff;
-    margin-bottom: 10px;
+    font-size: 3.5rem;
+    color: #3498db;
+    margin-bottom: 15px;
 }
 
 .skill-item span {
     display: block;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+/* Achievements & Activities Sections */
+.achievements ul, .activities ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.achievements li, .activities li {
+    background-color: #fff;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    font-size: 1.1rem;
+    border-left: 4px solid #3498db;
 }
 
 /* Projects Section */
 .project-card {
     background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
     text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
 }
 
 .project-card h3 {
-    color: #007bff;
-    font-size: 1.8rem;
-    margin-bottom: 15px;
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
 .project-card p {
-    font-size: 1.05rem;
-    margin-bottom: 20px;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    line-height: 1.7;
+    color: #555;
 }
 
-.project-links .github-link {
-    display: inline-block;
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
+.project-card strong {
+    color: #3498db;
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.github-link, .live-demo-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 25px;
+    border-radius: 6px;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.project-links .github-link:hover {
-    background-color: #555;
+.github-link {
+    background-color: #2c3e50;
+    color: #fff;
 }
 
-.project-links .github-link i {
+.github-link:hover {
+    background-color: #34495e;
+    transform: translateY(-2px);
+}
+
+.live-demo-link {
+    background-color: #27ae60;
+    color: #fff;
+}
+
+.live-demo-link:hover {
+    background-color: #219a52;
+    transform: translateY(-2px);
+}
+
+.github-link i, .live-demo-link i {
     margin-right: 8px;
 }
 
 /* Contact Section */
-.contact p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-}
-
-.contact-info p {
-    margin: 10px 0;
-    font-size: 1.1rem;
+.contact {
     text-align: center;
 }
 
-.contact-info p i {
-    color: #007bff;
-    margin-right: 10px;
+.contact p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-info {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-info p {
+    margin: 20px 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.contact-info i {
+    color: #3498db;
+    font-size: 1.3rem;
+    width: 25px;
 }
 
 .contact-info a {
-    color: #333;
+    color: #2c3e50;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .contact-info a:hover {
-    color: #007bff;
+    color: #3498db;
 }
 
 /* Footer */
 footer {
-    background-color: #333;
+    background-color: #2c3e50;
     color: #fff;
     text-align: center;
-    padding: 20px 0;
-    font-size: 0.9rem;
+    padding: 30px 0;
+    font-size: 1rem;
 }
 
 /* Responsive Design */
@@ -271,13 +348,13 @@ footer {
     }
 
     nav ul {
-        margin-top: 15px;
+        margin-top: 20px;
         flex-wrap: wrap;
         justify-content: center;
     }
 
     nav ul li {
-        margin: 5px 10px;
+        margin: 8px 12px;
     }
 
     .hero h1 {
@@ -289,25 +366,27 @@ footer {
     }
 
     h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     section {
-        padding: 50px 15px;
+        padding: 70px 20px;
     }
 
     .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 20px;
+    }
+
+    .project-links {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 
 @media (max-width: 480px) {
     .logo {
         font-size: 1.5rem;
-    }
-
-    nav ul li a {
-        font-size: 0.9rem;
     }
 
     .hero h1 {
@@ -320,18 +399,26 @@ footer {
 
     .social-links a {
         font-size: 2rem;
-        margin: 0 10px;
+        margin: 0 15px;
     }
 
     h2 {
         font-size: 1.8rem;
     }
 
+    .skill-item {
+        padding: 20px 15px;
+    }
+
     .skill-item i {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
+    }
+
+    .project-card {
+        padding: 25px;
     }
 
     .project-card h3 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 }
