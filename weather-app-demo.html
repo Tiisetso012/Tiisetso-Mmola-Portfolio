@@ -378,6 +378,98 @@
             font-weight: 500;
         }
         
+        /* Interactive Tutorial Steps */
+        .tutorial-steps {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .tutorial-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #1a2980;
+        }
+        
+        .tutorial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .tutorial-step {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .tutorial-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: #3498db;
+        }
+        
+        .tutorial-step.active {
+            background: #e3f2fd;
+            border-color: #3498db;
+        }
+        
+        .step-icon {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+        
+        .step-action {
+            background: #3498db;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 15px;
+            display: inline-block;
+        }
+        
+        .tutorial-instruction {
+            text-align: center;
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+            border-left: 4px solid #3498db;
+        }
+        
+        .tutorial-instruction.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .highlight {
+            animation: highlightPulse 1.5s infinite;
+            border-color: #ff9800 !important;
+            box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.2) !important;
+        }
+        
+        @keyframes highlightPulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 152, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0); }
+        }
+        
         /* Features Section */
         .features-grid {
             display: grid;
@@ -428,6 +520,10 @@
             
             .forecast-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .tutorial-grid {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -488,12 +584,12 @@
                     </div>
                     
                     <div class="city-buttons">
-                        <button class="city-btn active" data-city="Johannesburg">Johannesburg</button>
-                        <button class="city-btn" data-city="Cape Town">Cape Town</button>
-                        <button class="city-btn" data-city="Durban">Durban</button>
-                        <button class="city-btn" data-city="Pretoria">Pretoria</button>
-                        <button class="city-btn" data-city="London">London</button>
-                        <button class="city-btn" data-city="New York">New York</button>
+                        <button class="city-btn active" data-city="Johannesburg" id="cityBtn1">Johannesburg</button>
+                        <button class="city-btn" data-city="Cape Town" id="cityBtn2">Cape Town</button>
+                        <button class="city-btn" data-city="Durban" id="cityBtn3">Durban</button>
+                        <button class="city-btn" data-city="Pretoria" id="cityBtn4">Pretoria</button>
+                        <button class="city-btn" data-city="London" id="cityBtn5">London</button>
+                        <button class="city-btn" data-city="New York" id="cityBtn6">New York</button>
                     </div>
                 </div>
                 
@@ -565,45 +661,77 @@
             </div>
         </div>
         
-        <!-- Demo Features -->
-        <div style="text-align: center; margin: 50px 0;">
-            <h2>Interactive Features</h2>
-            <p style="color: #666; max-width: 700px; margin: 0 auto 30px;">
-                This demo showcases the core functionality of a real weather application. Try these interactions:
+        <!-- Interactive Tutorial -->
+        <div class="tutorial-steps">
+            <h2 class="tutorial-title">🎯 Try These Interactive Features</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 30px;">
+                Click on any tutorial step below to learn and try that feature
             </p>
             
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">
+            <div class="tutorial-grid">
+                <div class="tutorial-step" id="step1">
+                    <div class="step-icon">
                         <i class="fas fa-search"></i>
                     </div>
                     <h3>City Search</h3>
-                    <p>Type any city name and click "Get Weather" to see real-time simulated data</p>
+                    <p>Type any city name and click "Get Weather"</p>
+                    <div class="step-action">Click to Try</div>
                 </div>
                 
-                <div class="feature-item">
-                    <div class="feature-icon">
+                <div class="tutorial-step" id="step2">
+                    <div class="step-icon">
                         <i class="fas fa-mouse-pointer"></i>
                     </div>
                     <h3>Quick Select</h3>
-                    <p>Click any city button to instantly switch locations</p>
+                    <p>Click any city button to instantly switch</p>
+                    <div class="step-action">Click to Try</div>
                 </div>
                 
-                <div class="feature-item">
-                    <div class="feature-icon">
+                <div class="tutorial-step" id="step3">
+                    <div class="step-icon">
                         <i class="fas fa-calendar-check"></i>
                     </div>
                     <h3>Forecast Preview</h3>
-                    <p>Click on any day in the 5-day forecast to select it</p>
+                    <p>Click on any day in the 5-day forecast</p>
+                    <div class="step-action">Click to Try</div>
                 </div>
                 
-                <div class="feature-item">
-                    <div class="feature-icon">
+                <div class="tutorial-step" id="step4">
+                    <div class="step-icon">
                         <i class="fas fa-sync-alt"></i>
                     </div>
                     <h3>Dynamic Updates</h3>
-                    <p>All weather data updates in real-time based on your selections</p>
+                    <p>See all data update in real-time</p>
+                    <div class="step-action">Click to Try</div>
                 </div>
+            </div>
+            
+            <div class="tutorial-instruction" id="instruction1">
+                <h4><i class="fas fa-search"></i> City Search Tutorial</h4>
+                <p>Try typing "Tokyo" in the search box above and click "Get Weather" button.</p>
+                <p><strong>Go ahead and try it now!</strong> The app will show simulated data for Tokyo.</p>
+                <button onclick="completeStep(1)" class="step-action">I've Tried It!</button>
+            </div>
+            
+            <div class="tutorial-instruction" id="instruction2">
+                <h4><i class="fas fa-mouse-pointer"></i> Quick Select Tutorial</h4>
+                <p>Click on the "Cape Town" button above to instantly switch to Cape Town weather.</p>
+                <p><strong>Click the Cape Town button now!</strong> Watch all weather data update instantly.</p>
+                <button onclick="completeStep(2)" class="step-action">I've Tried It!</button>
+            </div>
+            
+            <div class="tutorial-instruction" id="instruction3">
+                <h4><i class="fas fa-calendar-check"></i> Forecast Preview Tutorial</h4>
+                <p>Click on "Wednesday" in the 5-day forecast above to select that day.</p>
+                <p><strong>Click any forecast day now!</strong> It will highlight to show selection.</p>
+                <button onclick="completeStep(3)" class="step-action">I've Tried It!</button>
+            </div>
+            
+            <div class="tutorial-instruction" id="instruction4">
+                <h4><i class="fas fa-sync-alt"></i> Dynamic Updates Tutorial</h4>
+                <p>Try switching between different cities and watch all weather elements update.</p>
+                <p><strong>Try clicking "London" then "New York"</strong> to see instant updates.</p>
+                <button onclick="completeStep(4)" class="step-action">I've Tried It!</button>
             </div>
         </div>
         
@@ -753,6 +881,10 @@
             }
         };
 
+        // Tutorial state
+        let currentStep = 0;
+        let completedSteps = [];
+
         // Initialize the app
         document.addEventListener('DOMContentLoaded', function() {
             // Set current date
@@ -762,6 +894,9 @@
             
             // Load default city (Johannesburg)
             loadCityWeather('Johannesburg');
+            
+            // Set up tutorial steps
+            setupTutorial();
             
             // Set up city buttons
             document.querySelectorAll('.city-btn').forEach(btn => {
@@ -780,6 +915,14 @@
                     
                     // Show message
                     showMessage('City Changed', `Weather data loaded for ${city}. Try searching for other cities too!`);
+                    
+                    // Check if this completes step 2 or 4
+                    if (currentStep === 2 && city === 'Cape Town') {
+                        showMessage('Tutorial Progress', 'Great! You successfully switched cities. Now try clicking "I\'ve Tried It!" below.');
+                    }
+                    if (currentStep === 4) {
+                        showMessage('Tutorial Progress', 'Excellent! You can see how all data updates instantly. Now try the next step.');
+                    }
                 });
             });
             
@@ -799,12 +942,22 @@
                         
                         loadCityWeather(cityInput);
                         showMessage('Search Successful', `Found weather data for ${cityInput}.`);
+                        
+                        // Check if this completes step 1
+                        if (currentStep === 1 && cityInput.toLowerCase() === 'tokyo') {
+                            showMessage('Tutorial Progress', 'Perfect! You searched for Tokyo. Now click "I\'ve Tried It!" below.');
+                        }
                     } else {
                         // For unknown cities, use Johannesburg data but change name
                         const fakeData = {...weatherData['Johannesburg']};
                         fakeData.name = `${cityInput} (Simulated Data)`;
                         updateWeatherDisplay(fakeData);
                         showMessage('City Search', `Showing simulated data for ${cityInput}. In the real app, this would fetch live API data.`);
+                        
+                        // Still count as completion for step 1
+                        if (currentStep === 1) {
+                            showMessage('Tutorial Progress', 'Great! You tried the search feature. Now click "I\'ve Tried It!" below.');
+                        }
                     }
                 }
             });
@@ -816,6 +969,101 @@
                 }
             });
         });
+
+        // Set up tutorial functionality
+        function setupTutorial() {
+            // Add click events to tutorial steps
+            document.querySelectorAll('.tutorial-step').forEach((step, index) => {
+                step.addEventListener('click', function() {
+                    // Remove active class from all steps
+                    document.querySelectorAll('.tutorial-step').forEach(s => {
+                        s.classList.remove('active');
+                    });
+                    
+                    // Remove active class from all instructions
+                    document.querySelectorAll('.tutorial-instruction').forEach(i => {
+                        i.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked step
+                    this.classList.add('active');
+                    
+                    // Show corresponding instruction
+                    const instructionId = `instruction${index + 1}`;
+                    document.getElementById(instructionId).classList.add('active');
+                    
+                    // Set current step
+                    currentStep = index + 1;
+                    
+                    // Highlight relevant UI elements
+                    highlightRelevantElements(currentStep);
+                });
+            });
+        }
+
+        // Highlight relevant UI elements for current step
+        function highlightRelevantElements(step) {
+            // Remove previous highlights
+            document.querySelectorAll('.highlight').forEach(el => {
+                el.classList.remove('highlight');
+            });
+            
+            switch(step) {
+                case 1:
+                    // Highlight search box and button
+                    document.getElementById('demoCityInput').classList.add('highlight');
+                    document.getElementById('demoSearchBtn').classList.add('highlight');
+                    break;
+                case 2:
+                    // Highlight Cape Town button
+                    document.getElementById('cityBtn2').classList.add('highlight');
+                    break;
+                case 3:
+                    // Highlight forecast days
+                    const forecastDays = document.querySelectorAll('.forecast-day');
+                    if (forecastDays.length > 0) {
+                        forecastDays[1].classList.add('highlight'); // Highlight Wednesday
+                    }
+                    break;
+                case 4:
+                    // Highlight London and New York buttons
+                    document.getElementById('cityBtn5').classList.add('highlight');
+                    document.getElementById('cityBtn6').classList.add('highlight');
+                    break;
+            }
+        }
+
+        // Complete tutorial step
+        function completeStep(step) {
+            if (!completedSteps.includes(step)) {
+                completedSteps.push(step);
+                
+                // Mark step as completed
+                const stepElement = document.getElementById(`step${step}`);
+                stepElement.style.background = '#e8f5e9';
+                stepElement.style.borderColor = '#4caf50';
+                
+                // Show success message
+                showMessage('Tutorial Completed', `You've completed step ${step}! Try the next feature.`);
+                
+                // Move to next step if available
+                if (step < 4) {
+                    document.querySelectorAll('.tutorial-step').forEach(s => s.classList.remove('active'));
+                    document.querySelectorAll('.tutorial-instruction').forEach(i => i.classList.remove('active'));
+                    
+                    const nextStep = step + 1;
+                    document.getElementById(`step${nextStep}`).classList.add('active');
+                    document.getElementById(`instruction${nextStep}`).classList.add('active');
+                    currentStep = nextStep;
+                    highlightRelevantElements(nextStep);
+                } else {
+                    // All steps completed
+                    showMessage('🎉 Tutorial Complete!', 'You\'ve tried all interactive features! Feel free to explore more.');
+                    document.querySelectorAll('.tutorial-step').forEach(s => s.classList.remove('active'));
+                    document.querySelectorAll('.tutorial-instruction').forEach(i => i.classList.remove('active'));
+                }
+            }
+        }
 
         // Load weather for a specific city
         function loadCityWeather(city) {
@@ -849,6 +1097,7 @@
             forecastData.forEach((day, index) => {
                 const dayElement = document.createElement('div');
                 dayElement.className = 'forecast-day';
+                dayElement.id = `forecastDay${index}`;
                 dayElement.innerHTML = `
                     <div class="day-name">${day.day}</div>
                     <div class="day-icon"><i class="${day.icon}"></i></div>
@@ -867,6 +1116,11 @@
                     this.classList.add('selected');
                     
                     showMessage('Forecast Selected', `You selected ${day.day}'s forecast: ${day.desc}, High: ${day.high}°C, Low: ${day.low}°C`);
+                    
+                    // Check if this completes step 3
+                    if (currentStep === 3) {
+                        showMessage('Tutorial Progress', 'Great! You selected a forecast day. Now click "I\'ve Tried It!" below.');
+                    }
                 });
                 
                 forecastGrid.appendChild(dayElement);
