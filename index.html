@@ -3,140 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tiisetso Mmola - Virtual CV</title>
+    <title>Tiisetso Mmola | Software Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">Tiisetso Mmola</div>
-            <ul>
+            <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#activities">Activities</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="Tiisetso_Mmola_CV.pdf" target="_blank" class="cv-button">Download CV</a></li>
             </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </nav>
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section id="hero" class="hero">
             <div class="hero-content">
-                <h1>Hi, I'm Tiisetso Mmola</h1>
-                <p>BSc IT Graduate | Full-Stack Developer | Problem Solver</p>
+                <h1>Tiisetso Mmola</h1>
+                <p class="hero-title">BSc IT Graduate | Software Developer</p>
+                <p class="hero-subtitle">Building full-stack applications & scalable systems. Actively seeking a development internship.</p>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/tiisetso-mmola-2b1223341" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/tiisetso012" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/tilsetso-mmola-2b12233417" target="_blank" aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/Tilsetso012" target="_blank" aria-label="GitHub Profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:tiisetsommotla123@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
+                <a href="#projects" class="cta-button">View My Projects</a>
             </div>
         </section>
 
+        <!-- About Section -->
         <section id="about" class="about">
-            <h2>About Me</h2>
-            <p>I am a dedicated BSc Information Technology graduate from North-West University with a strong foundation in software development principles. My academic journey has equipped me with expertise in various programming languages, web development, and system design. I am passionate about leveraging technology to solve real-world problems and create innovative digital solutions.</p>
-            <p>I thrive in collaborative environments and am always eager to learn new technologies. My goal is to contribute to impactful projects and grow into a proficient full-stack developer while delivering exceptional user experiences.</p>
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Recent BSc Information Technology graduate from North-West University with hands-on, project-based experience in full-stack development and network design. Passionate about building practical solutions that solve real-world problems.</p>
+                        <p>My technical journey includes completing an intensive programming bootcamp at WeThinkCode and developing multiple academic projects. I thrive in collaborative environments and am eager to contribute to a professional software development team through an internship.</p>
+                        <p>Currently seeking opportunities to grow my expertise in backend systems, cloud technologies, and scalable software architecture while delivering meaningful impact.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
+        <!-- Skills Section -->
         <section id="skills" class="skills">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <i class="fab fa-java"></i>
-                    <span>Java</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fab fa-python"></i>
-                    <span>Python</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fab fa-js-square"></i>
-                    <span>JavaScript</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fab fa-react"></i>
-                    <span>React</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fab fa-node-js"></i>
-                    <span>Node.js</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-database"></i>
-                    <span>MongoDB</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-database"></i>
-                    <span>MySQL</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fab fa-git-alt"></i>
-                    <span>Git</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-network-wired"></i>
-                    <span>Networking</span>
+            <div class="container">
+                <h2>Technical Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                        <div class="skill-items">
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">C#</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">TypeScript</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-laptop-code"></i> Web Development</h3>
+                        <div class="skill-items">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Angular</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">REST APIs</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3><i class="fas fa-database"></i> Databases & Tools</h3>
+                        <div class="skill-items">
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Cisco Packet Tracer</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="achievements" class="achievements">
-            <h2>Achievements & Awards</h2>
-            <ul>
-                <li>Best achiever in Physical Science Grade 11 Certificate</li>
-                <li>Top 10 finalist Grade 11 Certificate</li>
-                <li>Best Achiever in Physical Science Grade 10</li>
-            </ul>
-        </section>
-
-        <section id="activities" class="activities">
-            <h2>Activities</h2>
-            <ul>
-                <li>Enrolled at WeThinkCode Programme BootCamp</li>
-            </ul>
-        </section>
-
+        <!-- Projects Section -->
         <section id="projects" class="projects">
-            <h2>Projects</h2>
-            <div class="project-card">
-                <h3>Caffex Coffee Shop - Full-Stack Web Application</h3>
-                <p>Led development of a full-stack e-commerce platform enabling online coffee orders and staff management. Built with <strong>React</strong> for the frontend and <strong>Node.js</strong> with <strong>MongoDB</strong> for backend services. Implemented user authentication, shopping cart functionality, and admin dashboard for inventory management. The responsive design provides seamless customer experience across all devices.</p>
-                <div class="project-links">
-                    <a href="https://github.com/tiisetso012/CoffeeShop" target="_blank" class="github-link"><i class="fab fa-github"></i> View on GitHub</a>
-                    <a href="https://tiisetso012.github.io/CoffeeShop/" target="_blank" class="live-demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <div class="container">
+                <h2>Featured Projects</h2>
+                <div class="projects-grid">
+                    <!-- Project 1: CafeX -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>CafeX - Full-Stack Coffee Shop Application</h3>
+                            <div class="project-date">Academic Project • 2024</div>
+                        </div>
+                        <div class="project-image">
+                            <!-- ADD YOUR SCREENSHOT HERE -->
+                            <div class="image-placeholder">
+                                <i class="fas fa-coffee"></i>
+                                <p>Application Screenshot</p>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <p>Engineered a responsive full-stack web application for online ordering and staff management. Implemented secure user authentication with role-based access control (customers vs. admin). Collaborated in a 4-person team using Git in an Agile workflow.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">C#</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Git</span>
+                                <span class="tech-tag">Agile</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/tiisetso012/CoffeeShop" target="_blank" class="project-link github-link">
+                                    <i class="fab fa-github"></i> View Code
+                                </a>
+                                <a href="#" class="project-link demo-link disabled">
+                                    <i class="fas fa-external-link-alt"></i> Demo (Coming Soon)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Network Design -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Enterprise Network Infrastructure Design</h3>
+                            <div class="project-date">Academic Project • 2024</div>
+                        </div>
+                        <div class="project-image">
+                            <!-- ADD YOUR SCREENSHOT HERE -->
+                            <div class="image-placeholder">
+                                <i class="fas fa-network-wired"></i>
+                                <p>Network Diagram</p>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <p>Designed and simulated a secure, scalable corporate network using Cisco Packet Tracer. Configured VLANs, routers, switches, DHCP, and DNS services to support 50+ devices. Implemented network segmentation for enhanced security and optimized performance.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Cisco Packet Tracer</span>
+                                <span class="tech-tag">VLAN</span>
+                                <span class="tech-tag">DHCP</span>
+                                <span class="tech-tag">DNS</span>
+                                <span class="tech-tag">Network Security</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/tiisetso012/Network-Infrastructure" target="_blank" class="project-link github-link">
+                                    <i class="fab fa-github"></i> View Project
+                                </a>
+                                <a href="https://tiisetso012.github.io/Network-Infrastructure/" target="_blank" class="project-link demo-link">
+                                    <i class="fas fa-external-link-alt"></i> View Documentation
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <div class="project-card">
-				<h3>Enterprise Network Infrastructure Design</h3>
-				<p>Designed and implemented a secure, scalable corporate network using <strong>Cisco Packet Tracer</strong>. Configured routers, switches, VLANs, DHCP, and DNS services to support 50+ devices across multiple departments. Implemented network segmentation for enhanced security and optimized performance.</p>
-				<div class="project-links">
-					<a href="https://github.com/tiisetso012/Network-Infrastructure" target="_blank" class="github-link">
-						<i class="fab fa-github"></i> View on GitHub
-					</a>
-					<a href="https://tiisetso012.github.io/Network-Infrastructure/index.html" target="_blank" class="live-demo-link">
-						<i class="fas fa-external-link-alt"></i> Live Demo
-					</a>
-				</div>
-			</div>
         </section>
 
+        <!-- Education Section -->
+        <section id="education" class="education">
+            <div class="container">
+                <h2>Education & Training</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>North-West University</h3>
+                            <p class="timeline-date">2022 - 2025</p>
+                            <p class="degree">BSc in Information Technology</p>
+                            <p class="description">Graduated with a foundation in software development, databases, networking, and system design. Key coursework included Data Structures, Object-Oriented Programming, Web Development, Database Systems, and Computer Networks.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h3>WeThinkCode</h3>
+                            <p class="timeline-date">2021</p>
+                            <p class="degree">Programming Bootcamp</p>
+                            <p class="description">Completed an intensive, project-based training program in software development fundamentals, problem-solving, and agile methodologies. Developed multiple applications through pair programming and code reviews.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
         <section id="contact" class="contact">
-            <h2>Get In Touch</h2>
-            <p>Feel free to reach out if you have any questions or collaboration opportunities!</p>
-            <div class="contact-info">
-                <p><i class="fas fa-envelope"></i> <a href="mailto:tiisetsommotla123@gmail.com">tiisetsommotla123@gmail.com</a></p> 
-                <p><i class="fas fa-phone"></i> <a href="tel:0845434609">0845434609</a></p> 
-                <p><i class="fas fa-map-marker-alt"></i> Tembisa, Gauteng</p> 
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <p class="contact-intro">I'm actively seeking software development internship opportunities. Let's connect and discuss how I can contribute to your team.</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <a href="mailto:tiisetsommotla123@gmail.com">tiisetsommotla123@gmail.com</a>
+                        <p>Response within 24 hours</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Phone</h3>
+                        <a href="tel:0845434609">084 543 4609</a>
+                        <p>Available for calls</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Location</h3>
+                        <p>Tembisa, Gauteng</p>
+                        <p>South Africa</p>
+                    </div>
+                </div>
+                
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/tilsetso-mmola-2b12233417" target="_blank" class="contact-link linkedin">
+                        <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                    </a>
+                    <a href="https://github.com/Tilsetso012" target="_blank" class="contact-link github">
+                        <i class="fab fa-github"></i> View GitHub
+                    </a>
+                    <a href="Tiisetso_Mmola_CV.pdf" target="_blank" class="contact-link cv">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Tiisetso Mmola. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2025 Tiisetso Mmola. All rights reserved.</p>
+            <p class="footer-note">Designed & coded with ❤️ | Last updated: December 2025</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
