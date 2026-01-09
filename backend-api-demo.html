@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend API Documentation | Tiisetso Mmola</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .api-demo-container {
+            max-width: 1000px;
+            margin: 100px auto 50px;
+            padding: 0 20px;
+        }
+        
+        .api-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .api-header h1 {
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .api-header .project-date {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .api-overview {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+        
+        .endpoint-container {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+        
+        .endpoint {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .method {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-right: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .get { background: #61affe; color: white; }
+        .post { background: #49cc90; color: white; }
+        .put { background: #fca130; color: white; }
+        .delete { background: #f93e3e; color: white; }
+        
+        .endpoint-url {
+            font-family: 'Courier New', monospace;
+            background: #2d2d2d;
+            color: #fff;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        
+        .response-example {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 2rem;
+        }
+        
+        .tech-item {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 2rem;
+            transition: var(--transition);
+        }
+        
+        .back-button:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        .features-list {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .features-list li {
+            margin-bottom: 0.8rem;
+        }
+        
+        @media (max-width: 768px) {
+            .api-demo-container {
+                margin: 80px auto 30px;
+            }
+            
+            .api-header h1 {
+                font-size: 2rem;
+            }
+            
+            .endpoint-url {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Tiisetso Mmola</div>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#education">Education</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="Tiisetso_Mmola_CV.pdf" target="_blank" class="cv-button">Download CV</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <div class="api-demo-container">
+        <div class="api-header">
+            <h1>Backend API - RESTful Service</h1>
+            <p class="project-date">Backend Project • 2024-2025</p>
+        </div>
+        
+        <div class="api-overview">
+            <h2>Project Overview</h2>
+            <p>A scalable RESTful API backend built with Node.js and Express.js, featuring MongoDB database integration and secure JWT authentication. This API serves as the foundation for various web and mobile applications, providing robust data management capabilities.</p>
+            
+            <h3>Key Features:</h3>
+            <ul class="features-list">
+                <li>User authentication and authorization with JWT tokens</li>
+                <li>CRUD operations for multiple data models</li>
+                <li>Input validation and error handling middleware</li>
+                <li>MongoDB database with Mongoose ODM</li>
+                <li>Environment configuration for different deployment stages</li>
+                <li>Rate limiting and security headers</li>
+                <li>Comprehensive API documentation</li>
+            </ul>
+            
+            <div class="tech-stack">
+                <span class="tech-item">Node.js</span>
+                <span class="tech-item">Express.js</span>
+                <span class="tech-item">MongoDB</span>
+                <span class="tech-item">Mongoose</span>
+                <span class="tech-item">JWT</span>
+                <span class="tech-item">REST API</span>
+                <span class="tech-item">Postman</span>
+                <span class="tech-item">Git</span>
+            </div>
+        </div>
+        
+        <div class="endpoint-container">
+            <h2>API Endpoints</h2>
+            
+            <div class="endpoint">
+                <div class="method get">GET</div>
+                <strong>Get All Users</strong>
+                <div class="endpoint-url">/api/users</div>
+                <p>Retrieve a list of all registered users (admin only)</p>
+                <div class="response-example">
+                    {
+                      "success": true,
+                      "count": 5,
+                      "data": [
+                        {
+                          "_id": "65f1b2c3d4e5f6a7b8c9d0e1",
+                          "name": "John Doe",
+                          "email": "john@example.com",
+                          "role": "user"
+                        }
+                      ]
+                    }
+                </div>
+            </div>
+            
+            <div class="endpoint">
+                <div class="method post">POST</div>
+                <strong>Register User</strong>
+                <div class="endpoint-url">/api/auth/register</div>
+                <p>Create a new user account</p>
+                <div class="response-example">
+                    // Request Body
+                    {
+                      "name": "Jane Smith",
+                      "email": "jane@example.com",
+                      "password": "securepassword123"
+                    }
+                    
+                    // Response
+                    {
+                      "success": true,
+                      "token": "eyJhbGciOiJIUzI1NiIs...",
+                      "user": {
+                        "id": "65f1b2c3d4e5f6a7b8c9d0e2",
+                        "name": "Jane Smith",
+                        "email": "jane@example.com"
+                      }
+                    }
+                </div>
+            </div>
+            
+            <div class="endpoint">
+                <div class="method post">POST</div>
+                <strong>User Login</strong>
+                <div class="endpoint-url">/api/auth/login</div>
+                <p>Authenticate user and receive JWT token</p>
+                <div class="response-example">
+                    {
+                      "success": true,
+                      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+                      "user": {
+                        "id": "65f1b2c3d4e5f6a7b8c9d0e1",
+                        "name": "John Doe",
+                        "email": "john@example.com"
+                      }
+                    }
+                </div>
+            </div>
+            
+            <div class="endpoint">
+                <div class="method get">GET</div>
+                <strong>Get User Profile</strong>
+                <div class="endpoint-url">/api/users/profile</div>
+                <p>Retrieve authenticated user's profile (protected route)</p>
+                <div class="response-example">
+                    {
+                      "success": true,
+                      "data": {
+                        "_id": "65f1b2c3d4e5f6a7b8c9d0e1",
+                        "name": "John Doe",
+                        "email": "john@example.com",
+                        "createdAt": "2024-01-15T10:30:00.000Z"
+                      }
+                    }
+                </div>
+            </div>
+        </div>
+        
+        <div class="api-overview">
+            <h2>Project Structure</h2>
+            <div class="response-example">
+backend-api/
+├── src/
+│   ├── controllers/     # Request handlers
+│   ├── models/          # MongoDB schemas
+│   ├── routes/          # API route definitions
+│   ├── middleware/      # Custom middleware
+│   ├── config/          # Configuration files
+│   └── utils/           # Utility functions
+├── .env.example         # Environment variables template
+├── package.json         # Dependencies
+├── server.js           # Entry point
+└── README.md           # Documentation
+            </div>
+            
+            <h2>Installation & Setup</h2>
+            <div class="response-example">
+# Clone the repository
+git clone https://github.com/Tiisetso012/backend-api.git
+
+# Navigate to project directory
+cd backend-api
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env
+# Edit .env with your configuration
+
+# Start development server
+npm run dev
+
+# Start production server
+npm start
+            </div>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="index.html#projects" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+            <a href="https://github.com/Tiisetso012/backend-api" target="_blank" class="back-button" style="background: var(--accent-color); margin-left: 1rem;">
+                <i class="fab fa-github"></i> View on GitHub
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Tiisetso Mmola. All rights reserved.</p>
+        <p class="footer-note">Backend API Documentation | Last updated: January 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
