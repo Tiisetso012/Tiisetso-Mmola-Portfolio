@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern React App Demo | Tiisetso Mmola Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .demo-container {
+            max-width: 1200px;
+            margin: 100px auto 50px;
+            padding: 0 20px;
+        }
+        
+        .demo-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .demo-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .screenshot-container {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .project-preview {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 2rem;
+        }
+        
+        .project-title {
+            color: #667eea;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .task-board {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .task-column {
+            background: white;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .column-header {
+            color: #2c3e50;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .task-card {
+            background: #f8f9fa;
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .task-card.medium {
+            border-left-color: #f39c12;
+        }
+        
+        .task-card.low {
+            border-left-color: #27ae60;
+        }
+        
+        .priority-tag {
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: white;
+        }
+        
+        .high { background: #e74c3c; }
+        .medium { background: #f39c12; }
+        .low { background: #27ae60; }
+        
+        .demo-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-card i {
+            color: #3498db;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #3498db;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .demo-header h1 {
+                font-size: 2rem;
+            }
+            
+            .stats-bar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .task-board {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Tiisetso Mmola</div>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#education">Education</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="Tiisetso_Mmola_CV.pdf" target="_blank" class="cv-button">Download CV</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="demo-container">
+            <div class="demo-header">
+                <h1>Modern React App - Visual Task Manager</h1>
+                <p>A responsive task management application built with React and modern web technologies</p>
+            </div>
+            
+            <div class="screenshot-container">
+                <h2>Application Interface</h2>
+                
+                <div class="project-preview">
+                    <h3 class="project-title">TaskFlow - Visual Task Manager</h3>
+                    
+                    <div class="stats-bar">
+                        <div class="stat-item">
+                            <div class="stat-value">4</div>
+                            <div>TOTAL TASKS</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">3</div>
+                            <div>COLUMNS</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">75%</div>
+                            <div>COMPLETED</div>
+                        </div>
+                    </div>
+                    
+                    <div class="task-board">
+                        <div class="task-column">
+                            <h4 class="column-header">To Do</h4>
+                            <div class="task-card">
+                                <strong>Learn React Hooks</strong>
+                                <p style="margin: 0.3rem 0; font-size: 0.9rem; color: #666;">Jan 9, 2026</p>
+                                <span class="priority-tag high">HIGH</span>
+                            </div>
+                            <div class="task-card medium">
+                                <strong>Build portfolio website</strong>
+                                <p style="margin: 0.3rem 0; font-size: 0.9rem; color: #666;">Jan 9, 2026</p>
+                                <span class="priority-tag medium">MEDIUM</span>
+                            </div>
+                        </div>
+                        
+                        <div class="task-column">
+                            <h4 class="column-header">In Progress</h4>
+                            <div class="task-card">
+                                <strong>Design UI components</strong>
+                                <p style="margin: 0.3rem 0; font-size: 0.9rem; color: #666;">Jan 9, 2026</p>
+                                <span class="priority-tag high">HIGH</span>
+                            </div>
+                        </div>
+                        
+                        <div class="task-column">
+                            <h4 class="column-header">Done</h4>
+                            <div class="task-card low">
+                                <strong>Set up project structure</strong>
+                                <p style="margin: 0.3rem 0; font-size: 0.9rem; color: #666;">Jan 9, 2026</p>
+                                <span class="priority-tag low">LOW</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 1.5rem;">
+                        <div style="display: inline-block; background: #f8f9fa; padding: 1rem; border-radius: 5px;">
+                            <p style="margin: 0; color: #666; font-style: italic;">
+                                <i class="fas fa-plus-circle" style="color: #3498db;"></i>
+                                Add a new task... Medium Priority
+                            </p>
+                            <button style="background: #3498db; color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; margin-top: 0.5rem; cursor: pointer;">
+                                + Add Task
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h2>Project Features</h2>
+            <p>This Modern React App demonstrates proficiency in building interactive web applications with clean, maintainable code and responsive design principles.</p>
+            
+            <div class="demo-features">
+                <div class="feature-card">
+                    <i class="fas fa-columns"></i>
+                    <h3>Kanban Board</h3>
+                    <p>Visual task organization using columns (To Do, In Progress, Done) for efficient workflow management.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-sort-amount-down"></i>
+                    <h3>Priority System</h3>
+                    <p>Color-coded priority levels (High, Medium, Low) for quick task identification and prioritization.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-drag-and-drop"></i>
+                    <h3>Drag & Drop</h3>
+                    <p>Interactive drag-and-drop functionality for moving tasks between columns with smooth animations.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Responsive Design</h3>
+                    <p>Fully responsive interface that works seamlessly on desktop, tablet, and mobile devices.</p>
+                </div>
+            </div>
+            
+            <h2>Technical Implementation</h2>
+            <p>The application is built using modern React practices including:</p>
+            <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+                <ul style="columns: 2; list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #27ae60;"></i> React Hooks (useState, useEffect)</li>
+                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #27ae60;"></i> Component-based Architecture</li>
+                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #27ae60;"></i> State Management</li>
+                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #27ae60;"></i> Responsive CSS with Flexbox/Grid</li>
+                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #27ae60;"></i> Event Handling</li>
+                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #27ae60;"></i> Form Management</li>
+                </ul>
+            </div>
+            
+            <div style="background: #e3f2fd; padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+                <h3 style="color: #1976d2;">GitHub Repository</h3>
+                <p>The complete source code with detailed documentation is available on GitHub:</p>
+                <a href="https://github.com/Tiisetso012/Modern-React-App" target="_blank" class="back-button" style="background: #2c3e50;">
+                    <i class="fab fa-github"></i> View Source Code
+                </a>
+            </div>
+            
+            <a href="index.html#projects" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Projects
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Tiisetso Mmola. All rights reserved.</p>
+        <p class="footer-note">Modern React App Demo | Visual Task Manager</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
