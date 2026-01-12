@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster PHP - Project Demo | Tiisetso Mmola</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Demo Page Specific Styles */
+        .demo-hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 140px 0 60px;
+            text-align: center;
+        }
+        
+        .demo-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .demo-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .demo-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .demo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .demo-image {
+            height: 220px;
+            background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+        }
+        
+        .demo-image i {
+            font-size: 5rem;
+        }
+        
+        .demo-content {
+            padding: 25px;
+        }
+        
+        .demo-content h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .demo-content p {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .demo-features {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .demo-features h2 {
+            text-align: left;
+            color: var(--secondary-color);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-color);
+        }
+        
+        .demo-features h2::after {
+            display: none;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .feature-item i {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-top: 3px;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 30px 0;
+        }
+        
+        .tech-tag {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid #bbdefb;
+        }
+        
+        .demo-actions {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #eee;
+        }
+        
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 10px 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 10px 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: #1a252f;
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .demo-hero {
+                padding: 120px 0 40px;
+            }
+            
+            .demo-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .demo-actions {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Tiisetso Mmola</div>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#education">Education</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="Tiisetso_Mmola_CV.pdf" target="_blank" class="cv-button">Download CV</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="demo-hero">
+        <h1>TaskMaster PHP Task Management System</h1>
+        <p>A full-stack PHP application for managing tasks with user authentication, database integration, and responsive design</p>
+        <div class="tech-tags" style="justify-content: center;">
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Bootstrap</span>
+        </div>
+    </section>
+
+    <div class="demo-container">
+        <div class="demo-grid">
+            <div class="demo-card">
+                <div class="demo-image">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <div class="demo-content">
+                    <h3>Secure Authentication</h3>
+                    <p>Implemented user registration and login system with password hashing using PHP's password_hash() function. Session management ensures secure user access.</p>
+                </div>
+            </div>
+            
+            <div class="demo-card">
+                <div class="demo-image">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <div class="demo-content">
+                    <h3>Task Management</h3>
+                    <p>Full CRUD (Create, Read, Update, Delete) operations for tasks. Users can add, edit, mark as complete, and delete tasks with ease.</p>
+                </div>
+            </div>
+            
+            <div class="demo-card">
+                <div class="demo-image">
+                    <i class="fas fa-database"></i>
+                </div>
+                <div class="demo-content">
+                    <h3>MySQL Database</h3>
+                    <p>Structured database design with users and tasks tables. Proper SQL queries with prepared statements to prevent SQL injection attacks.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo-features">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4 style="margin: 0 0 5px 0; color: var(--secondary-color);">User Registration & Login</h4>
+                        <p style="margin: 0; color: #666;">Secure authentication system with form validation</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <i class="fas fa-list-check"></i>
+                    <div>
+                        <h4 style="margin: 0 0 5px 0; color: var(--secondary-color);">Task CRUD Operations</h4>
+                        <p style="margin: 0; color: #666;">Create, read, update, and delete tasks</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <i class="fas fa-flag"></i>
+                    <div>
+                        <h4 style="margin: 0 0 5px 0; color: var(--secondary-color);">Priority System</h4>
+                        <p style="margin: 0; color: #666;">Tasks categorized by priority (High, Medium, Low)</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <i class="fas fa-calendar-day"></i>
+                    <div>
+                        <h4 style="margin: 0 0 5px 0; color: var(--secondary-color);">Due Date Tracking</h4>
+                        <p style="margin: 0; color: #666;">Set and track task deadlines</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <i class="fas fa-mobile-screen"></i>
+                    <div>
+                        <h4 style="margin: 0 0 5px 0; color: var(--secondary-color);">Responsive Design</h4>
+                        <p style="margin: 0; color: #666;">Works on desktop, tablet, and mobile devices</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <h4 style="margin: 0 0 5px 0; color: var(--secondary-color);">Security Features</h4>
+                        <p style="margin: 0; color: #666;">Input validation and SQL injection prevention</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo-features">
+            <h2>Technical Implementation</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <div>
+                    <h3 style="color: var(--secondary-color); margin-bottom: 15px;">Frontend</h3>
+                    <ul style="color: #666; line-height: 1.8; padding-left: 20px;">
+                        <li>HTML5 for structure</li>
+                        <li>CSS3 with Bootstrap for styling</li>
+                        <li>JavaScript for interactivity</li>
+                        <li>Responsive design principles</li>
+                        <li>Clean, intuitive user interface</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: var(--secondary-color); margin-bottom: 15px;">Backend</h3>
+                    <ul style="color: #666; line-height: 1.8; padding-left: 20px;">
+                        <li>PHP for server-side logic</li>
+                        <li>MySQL database management</li>
+                        <li>Session-based authentication</li>
+                        <li>RESTful architecture principles</li>
+                        <li>MVC pattern implementation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo-actions">
+            <a href="https://github.com/Tiisetso012/taskmaster--php-task-management-system" target="_blank" class="btn-primary">
+                <i class="fab fa-github"></i> View Source Code on GitHub
+            </a>
+            <a href="index.html#projects" class="btn-secondary">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
